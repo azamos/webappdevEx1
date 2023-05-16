@@ -1,0 +1,25 @@
+.flex{
+    display: flex;
+}
+.row{
+    flex-direction: row;
+}
+.col{
+    flex-direction: column;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.centerlized{
+    justify-content: center;
+    align-items: center;;
+}
+.padded-sm{
+    padding: 1vmin;
+}
+.hidden{
+    visibility: hidden;
+}
+.gapped{
+    gap: 10px;
+}
