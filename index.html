@@ -10,19 +10,24 @@
 <body>
     <!--relevant html starts here-->
     <div id = "app"
-     class="flex col centerlizedItems  padded-sm gapped">
+     class="flex col centerlizedItems padded-sm gapped">
         <h1>Add a new task:</h1>
         <textarea class="bordered padded-sm" id="taskDetails" placeholder="Enter new task details here" maxlength="30" cols="30" rows="10"></textarea>
-        <button class="bordered padded-sm oval btn" type="button" id="submit" disabled="true" onclick="submitTaskHandler()"><h3>Submit</h3></button>
+        <button class="bordered padded-sm oval" type="button" id="submit" disabled="true" onclick="submitTaskHandler()"><h3>Submit</h3></button>
+        <div id="tasks" class="eighty"></div>
     </div>
-    <div class="template flex row spaced bordered gapped tenthheight halfwidth padded-sm centerlizedItems centerlizedContent hidden">
+
+
+    <div class="template hundredwidth flex row spaced bordered  tenthheight padded-sm gapped centerlizedItems centerlizedContent hidden">
         <!--This is where the title and details of the task will be attached later-->
-        <div class="Title rightShadow"></div>
-        <div class="Content rightShadow"></div>
-        <div class="flex row centerlizedItems end gapped">
-            <button class="bordered ">Delete</button>
-            <button class="bordered ">Down</button>
-            <button class="bordered ">Up</button>
+        <div class="Title rightShadow padded-sm third"></div>
+        <div class="Content rightShadow padded-sm third wordRap"></div>
+        <div class="flex row centerlizedItems centerlizedContent  padded-sm third">
+            <div class="halfwidth">
+                <button class="bordered padded-sm oval hundredwidth">Down</button>
+                <button class="bordered padded-sm oval hundredwidth">Up</button>
+            </div>
+            <button class="bordered padded-sm oval halfwidth">Delete</button>
         </div>
     </div>
     <!--relevant html stops here-->
@@ -48,7 +53,7 @@
 
         textareaRef.addEventListener("input",textAreaValueChanged);
 
-        const app = document.getElementById('app');
+        const tasks = document.getElementById('tasks');
 
         const submitTaskHandler = e => {//If we are here, it means the submit button is enabled.
             const newTask = template.cloneNode(true);
@@ -56,15 +61,16 @@
             textareaRef.value="";//PROBLEM: Will not re-disable the submit button,thus:
             submitBtnRef.setAttribute('disabled',true);//Ugly solution, good enough for now.
             let id = `task #${++counter}`;
-            newTask.childNodes[3].innerHTML = `<div class="flex row gapped centerlizedContent rightShadow"><h1>${id}</h1></div>`
-            newTask.childNodes[5].innerHTML = `<div class="rightShadow"><h1>content: ${taskDetes}</h1></div>`;
+            newTask.childNodes[3].innerHTML = `<div class="flex row  centerlizedContent "><h2>${id}</h2></div>`
+            newTask.childNodes[5].innerHTML = `<div class=""><h2>${taskDetes}</h2></div>`;
             newTask.classList.remove('hidden');
             console.log(newTask.childNodes);
             app.append(newTask);
         };
 
         const deleteTaskEventHandler = e => {};
-        //submitBtnRef.addEventListener("click",submitTaskHandler);
+        
+        
 
     </script>
     <!--Javascript ends here-->

@@ -1,6 +1,9 @@
 .flex{
     display: flex;
 }
+.wordRap{
+    word-wrap: break-word;
+}
 .row{
     flex-direction: row;
 }
@@ -9,6 +12,9 @@
 }
 .wrap{
     flex-wrap: wrap;
+}
+.hundredwidth{
+    width: 100%;
 }
 .start{
     justify-content: flex-start;
@@ -32,27 +38,48 @@
     visibility: hidden;
 }
 .gapped{
-    gap: 10px;
+    gap: 1vh;
 }
-.btn{
-    min-width: 10vw;
-}
+
 .bordered{
-    border: 1px orangered solid;
-    box-shadow: 5px 5px 10px 5px dodgerblue;
+    border: .1vmin rgb(0, 72, 255) solid;
+    box-shadow: .5vmin .5vmin .5vmin .5vmin lightgray;
 }
-.greyBordered{
-    box-shadow: 1px 1px 1px 1px grey;
+
+.eighty{
+    width: 80vmin;
 }
+
 .oval{
     border-radius: 25%;
 }
 .halfwidth{
-    min-width: 50vw;
+    width: 50%;
 }
 .tenthheight{
-    min-height: 10vh;
+    height: 10%;
 }
 .rightShadow{
-    box-shadow: .2vmin 0px 0px 0px grey;
+    border-right: .5vmin double rgb(206, 206, 206);
 }
+.leftShadow{
+    border-left: .5vmin double rgb(206, 206, 206);
+}
+.third{
+    width: 33%;
+}
+.hundred{
+    height: 100%;
+}
+@supports (-webkit-text-stroke: 0.1vmin black) {
+    h1 {
+      -webkit-text-stroke: 0.1vmin black;
+      -webkit-text-fill-color: white;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+    h2{
+        -webkit-text-stroke: 0.1vmin black;
+        -webkit-text-fill-color: white;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+  }
