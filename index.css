@@ -71,6 +71,16 @@
 .hundred{
     height: 100%;
 }
+
+
+.redbg{
+    background-color: rgb(255, 47, 0);
+    color: white;
+}
+.bluebg{
+    background-color: lightcyan;
+}
+
 @supports (-webkit-text-stroke: 0.1vmin black) {
     h1 {
       -webkit-text-stroke: 0.1vmin black;

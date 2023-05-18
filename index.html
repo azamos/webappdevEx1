@@ -14,20 +14,20 @@
         <h1>Add a new task:</h1>
         <textarea class="bordered padded-sm" id="taskDetails" placeholder="Enter new task details here" maxlength="30" cols="30" rows="10"></textarea>
         <button class="bordered padded-sm oval" type="button" id="submit" disabled="true" onclick="submitTaskHandler()"><h3>Submit</h3></button>
-        <div id="tasks" class="eighty"></div>
+        <div id="tasks" style="width: 90vw;"></div>
     </div>
 
 
     <div class="template hundredwidth flex row spaced bordered  tenthheight padded-sm gapped centerlizedItems centerlizedContent hidden">
         <!--This is where the title and details of the task will be attached later-->
-        <div class="Title rightShadow padded-sm third"></div>
-        <div class="Content rightShadow padded-sm third wordRap"></div>
-        <div class="flex row centerlizedItems centerlizedContent  padded-sm third">
+        <div class="Title padded-sm third"></div>
+        <div class="Content padded-sm third wordRap leftShadow rightShadow"></div>
+        <div class="flex row centerlizedItems centerlizedContent  padded-sm gapped third">
             <div class="halfwidth">
-                <button class="bordered padded-sm oval hundredwidth">Down</button>
-                <button class="bordered padded-sm oval hundredwidth">Up</button>
+                <button class="bordered padded-sm  hundredwidth bluebg">Up</button>
+                <button class="bordered padded-sm  hundredwidth bluebg">Down</button>
             </div>
-            <button class="bordered padded-sm oval halfwidth">Delete</button>
+            <button class="bordered padded-sm  halfwidth redbg">Delete</button>
         </div>
     </div>
     <!--relevant html stops here-->
@@ -62,10 +62,9 @@
             submitBtnRef.setAttribute('disabled',true);//Ugly solution, good enough for now.
             let id = `task #${++counter}`;
             newTask.childNodes[3].innerHTML = `<div class="flex row  centerlizedContent "><h2>${id}</h2></div>`
-            newTask.childNodes[5].innerHTML = `<div class=""><h2>${taskDetes}</h2></div>`;
+            newTask.childNodes[5].innerHTML = `<div class="">Description:<h2>${taskDetes}</h2></div>`;
             newTask.classList.remove('hidden');
-            console.log(newTask.childNodes);
-            app.append(newTask);
+            tasks.append(newTask);
         };
 
         const deleteTaskEventHandler = e => {};
